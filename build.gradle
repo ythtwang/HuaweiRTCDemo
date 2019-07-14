@@ -1,0 +1,43 @@
+buildscript {
+	ext {
+		sprintBootVersion = '2.1.5.RELEASE'
+	}
+
+	repositories {
+		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+	}
+
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${sprintBootVersion}")
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+
+allprojects {
+	group = 'com.ythtwang'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = '1.8'
+	ext.COMMONS_LANG3_VERSION = "3.6"
+	ext.HTTP_CORE_NIO_VERSION = "4.4.5"
+	ext.HTTP_CLIENT_VERSION = "4.5.5"
+}
+
+repositories {
+	maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile "org.apache.commons:commons-lang3:$COMMONS_LANG3_VERSION"
+	compile "org.apache.httpcomponents:httpcore-nio:$HTTP_CORE_NIO_VERSION"
+	compile "org.apache.httpcomponents:httpclient:$HTTP_CLIENT_VERSION"
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
