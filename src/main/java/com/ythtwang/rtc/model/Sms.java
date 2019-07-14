@@ -84,8 +84,8 @@ public class Sms extends BaseRequest {
         ObjectMapper mapper = new ObjectMapper();
         rsp = mapper.readValue(rspBody, ResponseBody.class);
         StateCode = response.getStatusLine().getStatusCode();
-
         return StateCode == 200;
+
     }
 
     public String getSmsResult() {
