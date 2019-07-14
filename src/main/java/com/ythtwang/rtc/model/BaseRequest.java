@@ -16,9 +16,9 @@ public class BaseRequest {
     protected String appKey;
     protected String appSecret;
 
-    public BaseRequest() {
-        this.appKey = System.getenv("RTC_SMS_APP_KEY");
-        this.appSecret = System.getenv("RTC_SMS_APP_SECRET");
+    public BaseRequest(String appKey, String appSecret) {
+        this.appKey = appKey;
+        this.appSecret = appSecret;
     }
 
     /**

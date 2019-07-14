@@ -17,7 +17,7 @@ public class DemoController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/smsRequest", method = RequestMethod.GET)
+    @RequestMapping(value = "/sms", method = RequestMethod.GET)
     @ResponseBody
     public String sms(@RequestParam(value = "receiver", required = true) String receiver,
                       @RequestParam(value = "statuscallback", required = true, defaultValue = "") String statuscallback,
@@ -26,7 +26,10 @@ public class DemoController {
         System.out.println("receiver: " + receiver);
         System.out.println("statuscallback: " + statuscallback);
         System.out.println("templateParas: " + templateParas);
-        smsRequest.send(receiver, statuscallback, templateParas);
+        if (!smsRequest.send(receiver, statuscallback, templateParas)) {
+            return "send smsRequest to (" + receiver + ") fail. \nHUAWEI RTC Response StateCode: " + smsRequest.getStateCode() +
+                    "\nHUAWEI RTC Entity: " + smsRequest.getSmsResult() + "\n";
+        }
         return "send smsRequest to (" + receiver + ") successfully. \n ";
     }
 
