@@ -39,14 +39,6 @@ public class Sms extends BaseRequest {
         super(System.getenv("RTC_SMS_APP_KEY"), System.getenv("RTC_SMS_APP_SECRET"));
     }
 
-    public String getSmsResult() {
-        return this.rsp.result.toString();
-    }
-
-    public int getStateCode() {
-        return this.StateCode;
-    }
-
     /**
      * templateParas选填,使用无变量模板时请赋空值 String templateParas = "";
      * 单变量模板示例:模板内容为"您的验证码是${NUM_6}"时,templateParas可填写为"[\"369751\"]"
@@ -92,8 +84,16 @@ public class Sms extends BaseRequest {
         ObjectMapper mapper = new ObjectMapper();
         rsp = mapper.readValue(rspBody, ResponseBody.class);
         StateCode = response.getStatusLine().getStatusCode();
-
         return StateCode == 200;
+
+    }
+
+    public String getSmsResult() {
+        return this.rsp.result.toString();
+    }
+
+    public int getStateCode() {
+        return this.StateCode;
     }
 
     //receiver必填,全局号码格式(包含国家码),示例:"+8615123456789,+8615234567890",多个号码之间用英文逗号分隔
