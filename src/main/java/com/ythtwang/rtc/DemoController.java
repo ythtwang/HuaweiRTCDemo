@@ -21,7 +21,7 @@ public class DemoController {
     @ResponseBody
     public String sms(@RequestParam(value = "receiver", required = true) String receiver,
                       @RequestParam(value = "statuscallback", required = true, defaultValue = "") String statuscallback,
-                      @RequestParam(value = "templateParas", required = true, defaultValue = "[\"369751\"]") String templateParas
+                      @RequestParam(value = "templateParas", required = true, defaultValue = "[\"36975101\"]") String templateParas
     ) throws Exception {
         System.out.println("receiver: " + receiver);
         System.out.println("statuscallback: " + statuscallback);
