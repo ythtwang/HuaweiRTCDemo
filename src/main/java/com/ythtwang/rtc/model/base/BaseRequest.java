@@ -1,4 +1,4 @@
-package com.ythtwang.rtc.model;
+package com.ythtwang.rtc.model.base;
 
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -28,7 +28,7 @@ public class BaseRequest {
      * @param appSecret
      * @return
      */
-    static String buildWsseHeader(String appKey, String appSecret) {
+    protected static String buildWsseHeader(String appKey, String appSecret) {
         if (null == appKey || null == appSecret || appKey.isEmpty() || appSecret.isEmpty()) {
             System.out.println("buildWsseHeader(): appKey or appSecret is null.");
             return null;

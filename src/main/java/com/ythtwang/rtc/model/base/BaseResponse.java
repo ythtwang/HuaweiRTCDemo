@@ -1,4 +1,4 @@
-package com.ythtwang.rtc.model;
+package com.ythtwang.rtc.model.base;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

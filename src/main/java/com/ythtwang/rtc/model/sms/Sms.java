@@ -1,7 +1,9 @@
-package com.ythtwang.rtc.model;
+package com.ythtwang.rtc.model.sms;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ythtwang.rtc.model.base.BaseRequest;
+import com.ythtwang.rtc.model.base.BaseResponse;
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -55,6 +57,8 @@ public class Sms extends BaseRequest {
             return false;
         }
 
+        //System.out.println(body + "\n");
+
         //请求Headers中的X-WSSE参数值
         String wsseHeader = buildWsseHeader(appKey, appSecret);
         if (null == wsseHeader || wsseHeader.isEmpty()) {
@@ -85,7 +89,6 @@ public class Sms extends BaseRequest {
         rsp = mapper.readValue(rspBody, ResponseBody.class);
         StateCode = response.getStatusLine().getStatusCode();
         return StateCode == 200;
-
     }
 
     public String getSmsResult() {
