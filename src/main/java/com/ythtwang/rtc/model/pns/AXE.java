@@ -23,7 +23,7 @@ public class AXE extends BaseRequest {
         // 第一步: 设置绑定关系,即调用AXE模式绑定接口,绑定成功获取分机号E,如: 1234
         // axe.axeBindNumber("+8617010000001", "+8618612345678");
 
-        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: HostingVoiceEventImpl
+        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: AXVoiceEventImpl
 
         // 第二步: 用户通过隐私号码发起呼叫后,商户可随时终止一路呼叫,即调用终止呼叫接口
         // axe.axeStopCall("1200_366_0_20161228102743@callenabler.home1.com");

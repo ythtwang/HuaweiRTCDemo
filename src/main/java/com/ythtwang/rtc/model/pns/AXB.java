@@ -23,8 +23,8 @@ public class AXB extends BaseRequest {
         // 第一步: 号码绑定,即调用AXB模式绑定接口
         // axb.axbBindNumber("+8617010000001", "+8618612345678", "+8618612345679");
 
-        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: HostingVoiceEventImpl
-        // 当用户使用短信功能,隐私保护通话平台将短信事件推送到商户应用,参考: HostingVoiceEventImpl
+        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: AXVoiceEventImpl
+        // 当用户使用短信功能,隐私保护通话平台将短信事件推送到商户应用,参考: AXVoiceEventImpl
 
         // 第二步: 用户通过隐私号码发起呼叫后,商户可随时终止一路呼叫,即调用终止呼叫接口
         // axb.axbStopCall("1200_366_0_20161228102743@callenabler.home1.com");

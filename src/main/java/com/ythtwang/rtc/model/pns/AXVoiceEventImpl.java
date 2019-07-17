@@ -5,13 +5,15 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  * 呼叫事件通知/话单通知/短信通知
  * 客户平台收到隐私保护通话平台的呼叫事件通知/话单通知/短信通知,可按如下样例解析处理
  */
-public class HostingVoiceEventImpl {
-    private static Logger logger = LogManager.getLogger(HostingVoiceEventImpl.class);
+@Component
+public class AXVoiceEventImpl {
+    private static Logger logger = LogManager.getLogger(AXVoiceEventImpl.class);
 
     /**
      * 呼叫事件 for AXB/AX/X/AXE/AXYB

@@ -21,8 +21,8 @@ public class X extends BaseRequest {
     public void run(String xNumber) throws Exception {
         IXInterface x = new XInterfaceImpl(appKey, appSecret, url);
 
-        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: HostingVoiceEventImpl
-        // 当用户使用短信功能,隐私保护通话平台将短信事件推送到商户应用,参考: HostingVoiceEventImpl
+        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: AXVoiceEventImpl
+        // 当用户使用短信功能,隐私保护通话平台将短信事件推送到商户应用,参考: AXVoiceEventImpl
 
         // X模式中的AXYB,Y为主显号码,当前暂不支持自定义号码(固定显示X号码)
         //

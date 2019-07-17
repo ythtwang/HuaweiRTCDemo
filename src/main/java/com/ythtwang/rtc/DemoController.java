@@ -26,6 +26,9 @@ public class DemoController {
     @Autowired
     private X xDemo;
 
+    @Autowired
+    private AXVoiceEventImpl callEventProcessor;
+
     /**
      * @param receiver,
      * @param statuscallback,
@@ -108,4 +111,47 @@ public class DemoController {
 
         return "run private number X demo X:" + xNumber + " ) successfully. \n ";
     }
+
+    /**
+     * AX呼叫事件通知处理
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "ax/callevent", method = RequestMethod.POST)
+    @ResponseBody
+    public String callevent(@RequestBody String body) throws Exception {
+        callEventProcessor.onCallEvent(body);
+
+        return "Receive call event. \n ";
+    }
+
+    /**
+     * AX话单通知处理
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "ax/fee", method = RequestMethod.POST)
+    @ResponseBody
+    public String fee(@RequestBody String body) throws Exception {
+        callEventProcessor.onFeeEvent(body);
+
+        return "Receive fee event. \n ";
+    }
+
+    /**
+     * AX收到短信通知处理
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "ax/smsEvent", method = RequestMethod.POST)
+    @ResponseBody
+    public String smsEvent(@RequestBody String body) throws Exception {
+        callEventProcessor.onSmsEvent(body);
+
+        return "Receive sms event. \n ";
+    }
+
 }

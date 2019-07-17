@@ -24,8 +24,8 @@ public class AX extends BaseRequest {
         // ax.axBindNumber("+8618612345678", "+8617010000001", "0");
         ax.axBindNumber(aNumber, xNumber, "0");
 
-        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: HostingVoiceEventImpl
-        // 当用户使用短信功能,隐私保护通话平台将短信事件推送到商户应用,参考: HostingVoiceEventImpl
+        // 当用户发起通话时,隐私保护通话平台会将呼叫事件推送到商户应用,参考: AXVoiceEventImpl
+        // 当用户使用短信功能,隐私保护通话平台将短信事件推送到商户应用,参考: AXVoiceEventImpl
 
         // 第二步: 用户通过隐私号码发起呼叫后,商户可随时终止一路呼叫,即调用终止呼叫接口
         // ax.axStopCall("1200_366_0_20161228102743@callenabler.home1.com");
@@ -40,9 +40,9 @@ public class AX extends BaseRequest {
         // ax.axSetCalleeNumber(null, "+8618612345678", "+8617010000001", "+8618612345679");
 
         // 第六步: 隐私号码循环使用,商户可将绑定关系解绑,即调用AX模式解绑接口
-        // ax.axUnbindNumber(null, "+8618612345678", "+8617010000001");
+        //ax.axUnbindNumber(null, aNumber, xNumber);
 
         // 第七步: 商户可查询已订购的隐私号码的绑定信息,即调用AX模式绑定信息查询接口
-        ax.axQueryBindRelation(null, "+8618612345678");
+        ax.axQueryBindRelation(null, aNumber);
     }
 }
