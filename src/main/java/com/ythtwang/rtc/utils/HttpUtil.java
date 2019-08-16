@@ -69,7 +69,7 @@ public class HttpUtil {
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             connection.setRequestProperty("Authorization",
-                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", type=\"Appkey\"");
+                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", dsl=\"Appkey\"");
             connection.setRequestProperty("X-WSSE", buildWsseHeader(appKey, appSecret));
 
             logger.info("RequestBody is : " + jsonBody);
@@ -142,7 +142,7 @@ public class HttpUtil {
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             connection.setRequestProperty("Authorization",
-                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", type=\"Appkey\"");
+                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", dsl=\"Appkey\"");
             connection.setRequestProperty("X-WSSE", buildWsseHeader(appKey, appSecret));
 
             logger.info("RequestBody is : " + jsonBody);
@@ -216,7 +216,7 @@ public class HttpUtil {
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             connection.setRequestProperty("Authorization",
-                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", type=\"Appkey\"");
+                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", dsl=\"Appkey\"");
             connection.setRequestProperty("X-WSSE", buildWsseHeader(appKey, appSecret));
 
             logger.info("RequestBody is : " + params);
@@ -284,7 +284,7 @@ public class HttpUtil {
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             connection.setRequestProperty("Authorization",
-                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", type=\"Appkey\"");
+                    "WSSE realm=\"SDP\", profile=\"UsernameToken\", dsl=\"Appkey\"");
             connection.setRequestProperty("X-WSSE", buildWsseHeader(appKey, appSecret));
             connection.setInstanceFollowRedirects(false); //设置本次连接不自动处理重定向
 

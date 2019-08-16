@@ -12,7 +12,7 @@ public class BaseRequest {
     //无需修改,用于格式化鉴权头域,给"X-WSSE"参数赋值
     protected static String WSSE_HEADER_FORMAT = "UsernameToken Username=\"%s\",PasswordDigest=\"%s\",Nonce=\"%s\",Created=\"%s\"";
     //无需修改,用于格式化鉴权头域,给"Authorization"参数赋值
-    protected static String AUTH_HEADER_VALUE = "WSSE realm=\"SDP\",profile=\"UsernameToken\",type=\"Appkey\"";
+    protected static String AUTH_HEADER_VALUE = "WSSE realm=\"SDP\",profile=\"UsernameToken\",dsl=\"Appkey\"";
     protected String appKey;
     protected String appSecret;
 
